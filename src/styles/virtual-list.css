@@ -1,0 +1,76 @@
+/* Virtual List Styles */
+.virtual-wrapper {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 24px;
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 16px;
+  box-shadow: var(--shadow, 0 10px 15px -3px rgba(0, 0, 0, 0.05));
+  font-family: var(--sans, sans-serif);
+}
+
+.virtual-stats-banner {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: var(--accent-bg, rgba(170, 59, 255, 0.1));
+  border: 1px solid var(--accent-border, rgba(170, 59, 255, 0.3));
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  color: var(--text-h, #08060d);
+}
+
+.virtual-stats-banner strong {
+  color: var(--accent, #aa3bff);
+}
+
+/* The Fixed-Height Scrollable Viewport */
+.virtual-viewport {
+  position: relative;
+  overflow-y: auto;
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 10px;
+  background: var(--code-bg, #f4f3ec);
+}
+
+/* Custom Scrollbar */
+.virtual-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+.virtual-viewport::-webkit-scrollbar-thumb {
+  background: var(--border, #e5e4e7);
+  border-radius: 4px;
+}
+
+/* The Phantom Spacer Container (Heights 10,000 * 64px = 640,000px) */
+.virtual-phantom-container {
+  position: relative;
+  width: 100%;
+}
+
+/* The Moving Window of DOM elements */
+.virtual-content-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.virtual-item {
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border, #e5e4e7);
+  background: var(--bg, #ffffff);
+  font-size: 0.92rem;
+  transition: background 0.15s ease;
+}
+
+.virtual-item:hover {
+  background: var(--accent-bg, rgba(170, 59, 255, 0.08));
+}

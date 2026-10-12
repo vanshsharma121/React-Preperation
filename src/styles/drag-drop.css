@@ -1,0 +1,168 @@
+/* Drag and Drop (Kanban / Reorderable) Styles */
+.dnd-wrapper {
+  max-width: 860px;
+  margin: 30px auto;
+  padding: 24px;
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 16px;
+  box-shadow: var(--shadow, 0 10px 15px -3px rgba(0, 0, 0, 0.05));
+  font-family: var(--sans, sans-serif);
+}
+
+.dnd-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+/* Kanban Columns / Drop Zones */
+.dnd-column {
+  background: var(--code-bg, #f4f3ec);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  transition: all 0.2s ease;
+}
+
+/* Visual cue when a card is hovering over this column */
+.dnd-column.drag-over {
+  border-color: var(--accent, #aa3bff);
+  background: var(--accent-bg, rgba(170, 59, 255, 0.12));
+  transform: scale(1.01);
+}
+
+.dnd-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border, #e5e4e7);
+}
+
+.dnd-column-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-h, #08060d);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dnd-count-pill {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e5e4e7);
+  color: var(--text, #6b6375);
+  font-weight: 600;
+}
+
+/* Cards List */
+.dnd-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+/* Draggable Task Card */
+.dnd-card {
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.dnd-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-border, rgba(170, 59, 255, 0.3));
+}
+
+.dnd-card:active {
+  cursor: grabbing;
+}
+
+/* Styling applied to the original card while it is being dragged */
+.dnd-card.is-dragging {
+  opacity: 0.35;
+  border-style: dashed;
+  border-color: var(--accent, #aa3bff);
+  transform: scale(0.98);
+}
+
+/* Visual cue when hovering over a card to drop right at its position (reordering) */
+.dnd-card.drag-over-card {
+  border-color: var(--accent, #aa3bff);
+  box-shadow: 0 -3px 0 0 var(--accent, #aa3bff), 0 4px 12px rgba(170, 59, 255, 0.18);
+  transform: translateY(2px);
+}
+
+.dnd-column-title svg,
+.dnd-card-header svg {
+  flex-shrink: 0;
+}
+
+.dnd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.dnd-card-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-bug {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.tag-feature {
+  background: rgba(170, 59, 255, 0.15);
+  color: var(--accent, #aa3bff);
+}
+
+.tag-ui {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.dnd-card-title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-h, #08060d);
+  line-height: 135%;
+}
+
+.dnd-empty-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  border: 2px dashed var(--border, #e5e4e7);
+  border-radius: 8px;
+  color: var(--text, #6b6375);
+  font-size: 0.82rem;
+  padding: 20px;
+  text-align: center;
+}

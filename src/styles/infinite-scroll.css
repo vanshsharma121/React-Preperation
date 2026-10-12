@@ -1,0 +1,93 @@
+/* Infinite Scroll Styles */
+.infinite-wrapper {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 24px;
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 16px;
+  box-shadow: var(--shadow, 0 10px 15px -3px rgba(0, 0, 0, 0.05));
+  font-family: var(--sans, sans-serif);
+}
+
+.infinite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.infinite-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-h, #08060d);
+}
+
+.infinite-badge {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--accent-bg, rgba(170, 59, 255, 0.15));
+  color: var(--accent, #aa3bff);
+  font-weight: 600;
+}
+
+.infinite-scroll-container {
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Custom Scrollbar */
+.infinite-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.infinite-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.infinite-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--border, #e5e4e7);
+  border-radius: 4px;
+}
+
+/* Loading Spinner Area */
+.loading-sentinel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text, #6b6375);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--border, #e5e4e7);
+  border-top-color: var(--accent, #aa3bff);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.end-message {
+  text-align: center;
+  padding: 24px;
+  color: var(--text, #6b6375);
+  font-size: 0.92rem;
+  border-top: 1px dashed var(--border, #e5e4e7);
+  margin-top: 12px;
+}
