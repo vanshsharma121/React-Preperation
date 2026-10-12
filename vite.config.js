@@ -17,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  * https://vite.dev/config/
  */
 export default defineConfig({
-  base: "/React-Preperation/",
+  base: "/react-preparation/",
   plugins: [react()],
   resolve: {
     alias: {
